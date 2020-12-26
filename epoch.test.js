@@ -1,9 +1,9 @@
 import tap from 'tap';
-import { epoch, totalDays, year, yearEpoch, yearFromYearEpoch, monthFromMonthEpoch, monthEpoch, fromEpoch } from './data/epoch.js';
+import { toEpoch, totalDays, year, yearEpoch, yearFromYearEpoch, monthFromMonthEpoch, monthEpoch, fromEpoch } from './data/epoch.js';
 
 // totalDays
 tap.test('total days', (t) => {
-    const e = epoch(1494, 9, 4);
+    const e = toEpoch(1494, 9, 4);
 
     t.equal(totalDays(e), 545930);
     t.end();
@@ -11,7 +11,7 @@ tap.test('total days', (t) => {
 
 // epoch and yearFromYearEpoch
 tap.test('year - 1494', (t) => {
-    const e = epoch(1494, 9, 4);
+    const e = toEpoch(1494, 9, 4);
     const y = yearFromYearEpoch(e);
     
     t.equal(year(e), 1494);
@@ -21,7 +21,7 @@ tap.test('year - 1494', (t) => {
 });
 
 tap.test('year - 1214', (t) => {
-    const e = epoch(1214, 9, 4);
+    const e = toEpoch(1214, 9, 4);
     const y = yearFromYearEpoch(e);
     t.equal(year(e), 1214);
     t.equal(yearFromYearEpoch(yearEpoch(1214)), 1214);
@@ -30,7 +30,7 @@ tap.test('year - 1214', (t) => {
 });
 
 tap.test('year - 1', (t) => {
-    const e = epoch(1, 9, 4);
+    const e = toEpoch(1, 9, 4);
     const y = yearFromYearEpoch(e);
     t.equal(year(e), 1);
     t.equal(yearFromYearEpoch(yearEpoch(1)), 1);
@@ -39,7 +39,7 @@ tap.test('year - 1', (t) => {
 });
 
 tap.test('year - 999', (t) => {
-    const e = epoch(999, 9, 4);
+    const e = toEpoch(999, 9, 4);
     const y = yearFromYearEpoch(e);
     t.equal(year(e), 999);
     t.equal(yearFromYearEpoch(yearEpoch(999)), 999);
@@ -48,7 +48,7 @@ tap.test('year - 999', (t) => {
 });
 
 tap.test('year - 1001', (t) => {
-    const e = epoch(1001, 9, 4);
+    const e = toEpoch(1001, 9, 4);
     const y = yearFromYearEpoch(e);
     t.equal(year(e), 1001);
     t.equal(yearFromYearEpoch(yearEpoch(1001)), 1001);
@@ -57,7 +57,7 @@ tap.test('year - 1001', (t) => {
 });
 
 tap.test('year - 1600', (t) => {
-    const e = epoch(1600, 9, 4);
+    const e = toEpoch(1600, 9, 4);
     const y = yearFromYearEpoch(e);
     t.equal(year(e), 1600);
     t.equal(yearFromYearEpoch(yearEpoch(1600)), 1600);
@@ -222,7 +222,7 @@ tap.test('month - year = 1493 month = 8', (t) => {
 });
 
 tap.test('fromEpoch', (t) => {
-    const { year, month, day } = fromEpoch(epoch(1493, 7, 14));
+    const { year, month, day } = fromEpoch(toEpoch(1493, 7, 14));
     t.equal(year, 1493);
     t.equal(month, 7);
     t.equal(day, 14);

@@ -70,9 +70,9 @@ const fromEpoch = (epoch) => {
   return { year: y, month: m, day: d };
 };
 
-const epoch = (year, month, day) => {
+const toEpoch = (year, month, day) => {
   return yearEpoch(year) + monthEpoch(month, year) + dayEpoch(day);
 };
 
-export { totalDays, year, yearEpoch, monthEpoch, yearFromYearEpoch, monthFromMonthEpoch, fromEpoch, epoch };
+export { totalDays, year, yearEpoch, monthEpoch, yearFromYearEpoch, monthFromMonthEpoch, fromEpoch, toEpoch };
 
