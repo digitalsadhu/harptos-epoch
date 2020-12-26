@@ -1,7 +1,7 @@
 {
   "name": "harptos-epoch",
   "version": "1.0.0",
-  "description": "",
+  "description": "Converts Calendar of Harptos dates to and from an epoch.",
   "exports": {
     "default": "./data/epoch.js"
   },
