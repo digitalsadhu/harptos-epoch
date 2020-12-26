@@ -1,0 +1,21 @@
+{
+  "name": "harptos",
+  "version": "1.0.0",
+  "description": "",
+  "exports": {
+    "default": "./data/epoch.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node epoch.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "tap": "^14.11.0"
+  }
+}
